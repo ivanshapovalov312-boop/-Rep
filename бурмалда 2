@@ -1,0 +1,38 @@
+sp= []
+def push(x):
+    global sp
+    sp.append(x)
+    return "ok"
+def pop():
+    global sp
+    temp = sp[-1]
+    sp.pop()
+    return temp
+def back():
+    global sp
+    return sp[-1]
+def clear():
+    global sp
+    sp.clear()
+    return "ok" 
+def size():
+    global sp
+    return len(sp)
+exit = True
+while exit:
+    o = list(input().split())
+    o[0] = o[0].lower()
+    if len(o)==1:
+        if o[0] == "size":
+            print(size())
+        elif o[0] == "clear":
+            print(clear())
+        elif o[0] == "back":
+            print(back())
+        elif o[0]=="pop":
+            print(pop())
+        else:
+            exit = False
+            print("bye")
+    else:
+        print(push(o[1]))
